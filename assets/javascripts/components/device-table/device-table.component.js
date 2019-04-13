@@ -1,12 +1,12 @@
 (function() {
-  'use strict';
+  "use strict";
 
-  angular.module('deviceTable', []).component('deviceTable', {
-    templateUrl: 'assets/javascripts/components/device-table/device-table.html',
+  angular.module("deviceTable", []).component("deviceTable", {
+    templateUrl: "assets/javascripts/components/device-table/device-table.html",
     controller: DeviceTableController
   });
 
-  DeviceTableController.$inject = ['deviceFactory'];
+  DeviceTableController.$inject = ["deviceFactory"];
 
   function DeviceTableController(deviceFactory) {
     var vm = this;
@@ -15,7 +15,6 @@
     vm.collection = [];
 
     // Scope Functions
-
 
     // Lifecycle Hooks
     vm.$onInit = onInit;

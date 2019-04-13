@@ -1,5 +1,18 @@
+<div class="input-group" style="margin:20px auto; width: 500px">
+  <span class="input-group-addon" id="basic-addon1">&#128270</span>
+  <input
+    ng-model="searchText"
+    type="text"
+    class="form-control"
+    placeholder="Search by Model, Person, Group, or Device Category"
+    aria-describedby="basic-addon1"
+  />
+</div>
+
 <table class="table">
-  <caption>Company Devices</caption>
+  <caption>
+    Company Devices
+  </caption>
   <thead>
     <tr>
       <th ng-repeat="header in $ctrl.collection.headers track by $index"
@@ -8,8 +21,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="row in $ctrl.collection.rows">
-      <td ng-repeat="column in row track by $index"
+    <tr ng-repeat="row in $ctrl.collection.rows | filter : searchText">
+      <td ng-repeat="column in row track by $index" 
           ng-bind="column">
       </td>
     </tr>
