@@ -16,12 +16,14 @@
   <thead>
     <tr>
       <th ng-repeat="header in $ctrl.collection.headers track by $index"
-          ng-bind="header.full_label">
+          ng-bind="header.full_label"
+          ng-click="$parent.predicate = $index"
+      >
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="row in $ctrl.collection.rows | filter : searchText">
+    <tr ng-repeat="row in $ctrl.collection.rows | filter : searchText | orderBy:sorter">
       <td ng-repeat="column in row track by $index" 
           ng-bind="column">
       </td>
